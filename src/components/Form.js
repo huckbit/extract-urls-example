@@ -13,16 +13,16 @@ export default (form) => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <h3>String to clean</h3>
+          <h3>Extract urls from a string</h3>
           <textarea
             className="form-control"
-            rows="5"
-            placeholder="paste your text here..."
+            rows="7"
+            placeholder="paste text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Get Urls
         </button>
       </form>

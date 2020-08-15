@@ -3,12 +3,12 @@ import React from "react";
 export default () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="/">
           extract-urls
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -16,18 +16,27 @@ export default () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active"></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Repo
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                href="github.com/huckbit/extract-urls"
+                target="blank"
+                rel="noopener noreferrer"
+              >
+                Repository
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                href="https://www.npmjs.com/package/extract-urls"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 Documentation
               </a>
             </li>
