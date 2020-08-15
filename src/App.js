@@ -14,7 +14,7 @@ function App() {
   const handleUrls = (text) => {
     let urlsData = extractUrls(text);
     if (typeof urlsData === "undefined" || urlsData.length === 0) {
-      setWarning(`The given string doesn't contain any Url!`);
+      setWarning(`Last given string doesn't contain any Url!`);
     } else {
       setUrls(urlsData.map((uri, key) => <Url key={key} uri={uri} />));
       setUrlsCount(urlsData.length);
@@ -25,11 +25,6 @@ function App() {
   useEffect(() => {
     setWarning(null);
   }, [urls]);
-
-  //Resetting urls rendering state
-  // useEffect(() => {
-  //   setUrls(null);
-  // }, [warning]);
 
   return (
     <div>
