@@ -9,7 +9,7 @@ export default () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a className="navbar-brand" href="/">
-          <i class="fas fa-link"></i> extract-urls
+          <i className="fas fa-link"></i> extract-urls
         </a>
         <button
           className="navbar-toggler"
@@ -37,7 +37,7 @@ export default () => {
                 className="nav-link"
                 href="https://github.com/huckbit/extract-urls#readme"
               >
-                <i class="fas fa-file-code"></i> Documentation
+                <i className="fas fa-file-code"></i> Documentation
               </a>
             </li>
             <li className="nav-item">
@@ -45,7 +45,7 @@ export default () => {
                 className="nav-link"
                 href="https://www.npmjs.com/package/extract-urls"
               >
-                <i class="fab fa-npm"></i> Package
+                <i className="fab fa-npm"></i> Package
               </a>
             </li>
             <li className="nav-item">
@@ -53,7 +53,7 @@ export default () => {
                 className="nav-link"
                 href="https://github.com/huckbit/extract-urls"
               >
-                <i class="fas fa-code-branch"></i> Repository
+                <i className="fas fa-code-branch"></i> Repository
               </a>
             </li>
           </ul>
