@@ -40,7 +40,7 @@ function App() {
               )}
             </div>
             {warning && <Message type="warning">{warning}</Message>}
-            {urls}
+            <div className="pb-5">{urls}</div>
           </div>
         </div>
       </div>
