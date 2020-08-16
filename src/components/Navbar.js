@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default () => {
+  const [navbarOpened, setNavbarOpened] = useState(false);
+  const handleBurgerClick = () => {
+    setNavbarOpened(!navbarOpened);
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -15,17 +19,23 @@ export default () => {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={handleBurgerClick}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        {/* <div className="collapse navbar-collapse"> */}
+        <div
+          className={
+            navbarOpened
+              ? "collapse navbar-collapse show"
+              : "collapse navbar-collapse"
+          }
+        >
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a
                 className="nav-link"
                 href="https://github.com/huckbit/extract-urls/blob/master/README.md"
-                target="blank"
-                rel="noopener noreferrer"
               >
                 <i class="fab fa-npm"></i> Package
               </a>
@@ -34,8 +44,6 @@ export default () => {
               <a
                 className="nav-link"
                 href="https://www.npmjs.com/package/extract-urls"
-                target="blank"
-                rel="noopener noreferrer"
               >
                 <i class="fas fa-code-branch"></i> Repository
               </a>

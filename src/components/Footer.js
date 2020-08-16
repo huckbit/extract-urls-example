@@ -4,11 +4,7 @@ export default () => {
     <footer class="bg-light">
       <div class="container">
         <p style={{ paddingTop: "15px", textAlign: "center" }}>
-          <a
-            href="https://github.com/huckbit"
-            target="blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/huckbit">
             © huckbit {new Date().getFullYear()}
           </a>
         </p>

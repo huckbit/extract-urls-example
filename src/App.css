@@ -1,6 +1,10 @@
 .navbar {
   width: 100vw;
 }
+.nav-link {
+  text-align: right;
+  margin-right: 1vw;
+}
 main {
   display: flex;
   flex-direction: column;
