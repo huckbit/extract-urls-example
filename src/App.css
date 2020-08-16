@@ -1,4 +1,5 @@
-.navbar {
+.navbar,
+.jumbotron-fluid {
   width: 100vw;
 }
 .nav-link {

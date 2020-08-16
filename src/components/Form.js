@@ -13,7 +13,6 @@ export default (form) => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <h3 className="my-3">Extract urls from a string</h3>
           <textarea
             className="form-control mb-3"
             rows="7"

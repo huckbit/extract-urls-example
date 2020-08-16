@@ -30,7 +30,19 @@ function App() {
   return (
     <main>
       <Nabar />
-      <div className="container content mt-5">
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="display-4">extract-urls</h1>
+          <p className="lead">
+            {" "}
+            Extract urls from a given string. Recognise both{" "}
+            <span className="badge badge-primary">https</span>{" "}
+            <span className="badge badge-primary">http</span> and returns a
+            lower case list of urls.
+          </p>
+        </div>
+      </div>
+      <div className="container content">
         <div className="row">
           <div className="col">
             <Form handleUrls={handleUrls} />
