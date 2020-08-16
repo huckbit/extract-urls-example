@@ -35,7 +35,15 @@ export default () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://github.com/huckbit/extract-urls/blob/master/README.md"
+                href="https://github.com/huckbit/extract-urls#readme"
+              >
+                <i class="fas fa-file-code"></i> Documentation
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                href="https://www.npmjs.com/package/extract-urls"
               >
                 <i class="fab fa-npm"></i> Package
               </a>
@@ -43,7 +51,7 @@ export default () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://www.npmjs.com/package/extract-urls"
+                href="https://github.com/huckbit/extract-urls"
               >
                 <i class="fas fa-code-branch"></i> Repository
               </a>
