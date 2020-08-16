@@ -5,6 +5,7 @@ import Nabar from "./components/Navbar";
 import Form from "./components/Form";
 import Url from "./components/Url";
 import Message from "./components/Message";
+import Footer from "./components/Footer";
 
 function App() {
   const [urls, setUrls] = useState("");
@@ -27,9 +28,9 @@ function App() {
   }, [urls]);
 
   return (
-    <div>
+    <main>
       <Nabar />
-      <div className="container mt-5">
+      <div className="container content mt-5">
         <div className="row">
           <div className="col">
             <Form handleUrls={handleUrls} />
@@ -43,7 +44,8 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }
 

@@ -3,9 +3,9 @@ import React from "react";
 export default () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a className="navbar-brand" href="/">
-          extract-urls
+          <i class="fas fa-link"></i> extract-urls
         </a>
         <button
           className="navbar-toggler"
@@ -23,11 +23,11 @@ export default () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="https://github.com/huckbit/extract-urls"
+                href="https://github.com/huckbit/extract-urls/blob/master/README.md"
                 target="blank"
                 rel="noopener noreferrer"
               >
-                Repository
+                <i class="fab fa-npm"></i> Package
               </a>
             </li>
             <li className="nav-item">
@@ -37,7 +37,7 @@ export default () => {
                 target="blank"
                 rel="noopener noreferrer"
               >
-                Documentation
+                <i class="fas fa-code-branch"></i> Repository
               </a>
             </li>
           </ul>
