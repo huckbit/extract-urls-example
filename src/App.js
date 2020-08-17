@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [urls, setUrls] = useState("");
+  const [dataExport, setDataExport] = useState(null);
   const [warning, setWarning] = useState(null);
   const [urlsCount, setUrlsCount] = useState(null);
 
@@ -17,6 +18,7 @@ function App() {
     if (typeof urlsData === "undefined" || urlsData.length === 0) {
       setWarning(`Last given string doesn't contain any Url!`);
     } else {
+      setDataExport(urlsData);
       setUrls(urlsData.map((uri, key) => <Url key={key} uri={uri} />));
       setUrlsCount(urlsData.length);
     }
@@ -26,6 +28,16 @@ function App() {
   useEffect(() => {
     setWarning(null);
   }, [urls]);
+
+  // Create new export file using dataExport state
+  const handleDownloadUrls = () => {
+    const elem = document.createElement("a");
+    let links = dataExport.map((item) => `${item} \n`);
+    let urlsFile = new Blob(links, { type: "text/plain" });
+    elem.href = URL.createObjectURL(urlsFile);
+    elem.download = `urls-export-${Date.now()}.txt`;
+    elem.click();
+  };
 
   return (
     <main>
@@ -52,7 +64,18 @@ function App() {
               )}
             </div>
             {warning && <Message type="warning">{warning}</Message>}
-            <div className="pb-5">{urls}</div>
+            {urls && (
+              <div className="pb-5">
+                {urls}
+                <button
+                  className="btn btn-primary mt-3"
+                  onClick={handleDownloadUrls}
+                  download
+                >
+                  <i class="fas fa-download"></i> Download export file .txt
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
