@@ -15,6 +15,7 @@ export default (form) => {
         <div className="form-group">
           <textarea
             className="form-control mb-3"
+            required
             rows="7"
             placeholder="paste text here..."
             value={text}

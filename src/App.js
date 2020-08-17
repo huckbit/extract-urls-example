@@ -6,6 +6,7 @@ import Form from "./components/Form";
 import Url from "./components/Url";
 import Message from "./components/Message";
 import Footer from "./components/Footer";
+import DownloadBtn from "./components/DownloadBtn";
 
 function App() {
   const [urls, setUrls] = useState("");
@@ -83,20 +84,14 @@ function App() {
                 {urls}
                 <hr />
                 <div className="download">
-                  <button
-                    className="btn btn-outline-primary btn-sm mt-1"
-                    onClick={handleDownloadTxt}
-                    download
-                  >
-                    <i class="fas fa-download"></i> Export .txt
-                  </button>
-                  <button
-                    className="btn btn-outline-primary btn-sm mt-1 ml-2"
-                    onClick={handleDownloadMd}
-                    download
-                  >
-                    <i class="fas fa-download"></i> Export .md
-                  </button>
+                  <DownloadBtn
+                    handleDownload={handleDownloadTxt}
+                    text="Export .txt"
+                  />{" "}
+                  <DownloadBtn
+                    handleDownload={handleDownloadMd}
+                    text="Export .md"
+                  />
                 </div>
               </div>
             )}
