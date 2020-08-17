@@ -24,18 +24,28 @@ function App() {
     }
   };
 
-  // Resetting warning rendering state
+  // Warning rendering state reset
   useEffect(() => {
     setWarning(null);
   }, [urls]);
 
-  // Create new export file using dataExport state
-  const handleDownloadUrls = () => {
+  // Create new txt export file using dataExport state
+  const handleDownloadTxt = () => {
     const elem = document.createElement("a");
     let links = dataExport.map((item) => `${item} \n`);
     let urlsFile = new Blob(links, { type: "text/plain" });
     elem.href = URL.createObjectURL(urlsFile);
     elem.download = `urls-export-${Date.now()}.txt`;
+    elem.click();
+  };
+
+  // Create new markdown export file using dataExport state
+  const handleDownloadMd = () => {
+    const elem = document.createElement("a");
+    let links = dataExport.map((item) => `[${item}](${item}) \n`);
+    let urlsFile = new Blob(links, { type: "text/plain" });
+    elem.href = URL.createObjectURL(urlsFile);
+    elem.download = `urls-export-${Date.now()}.md`;
     elem.click();
   };
 
@@ -58,22 +68,36 @@ function App() {
         <div className="row">
           <div className="col">
             <Form handleUrls={handleUrls} />
-            <div className="my-3">
+            <div className="my-5">
               {urlsCount && (
-                <Message type="success">Found {urlsCount} urls</Message>
+                <Message type="success">
+                  {urlsCount > 1
+                    ? `${urlsCount} urls found`
+                    : `${urlsCount} url found`}
+                </Message>
               )}
             </div>
             {warning && <Message type="warning">{warning}</Message>}
             {urls && (
               <div className="pb-5">
                 {urls}
-                <button
-                  className="btn btn-primary mt-3"
-                  onClick={handleDownloadUrls}
-                  download
-                >
-                  <i class="fas fa-download"></i> Download export file .txt
-                </button>
+                <hr />
+                <div className="download">
+                  <button
+                    className="btn btn-outline-primary btn-sm mt-1"
+                    onClick={handleDownloadTxt}
+                    download
+                  >
+                    <i class="fas fa-download"></i> Export .txt
+                  </button>
+                  <button
+                    className="btn btn-outline-primary btn-sm mt-1 ml-2"
+                    onClick={handleDownloadMd}
+                    download
+                  >
+                    <i class="fas fa-download"></i> Export .md
+                  </button>
+                </div>
               </div>
             )}
           </div>
