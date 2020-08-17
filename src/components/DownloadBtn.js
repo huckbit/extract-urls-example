@@ -7,7 +7,7 @@ export default (download) => {
         onClick={() => download.handleDownload()}
         download
       >
-        <i class="fas fa-download"></i> {download.text}
+        <i className="fas fa-download"></i> {download.text}
       </button>
     </>
   );

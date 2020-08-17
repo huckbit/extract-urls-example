@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import extractUrls from "extract-urls";
 import "./App.css";
 import Nabar from "./components/Navbar";
@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import DownloadBtn from "./components/DownloadBtn";
 
 function App() {
-  const [urls, setUrls] = useState("");
+  const [urls, setUrls] = useState(null);
   const [dataExport, setDataExport] = useState(null);
   const [warning, setWarning] = useState(null);
   const [urlsCount, setUrlsCount] = useState(null);
@@ -18,17 +18,14 @@ function App() {
     let urlsData = extractUrls(text);
     if (typeof urlsData === "undefined" || urlsData.length === 0) {
       setWarning(`Last given string doesn't contain any Url!`);
+      setUrls(null); //cleaning previous render
     } else {
+      setWarning(false); //cleaning previous render
       setDataExport(urlsData);
       setUrls(urlsData.map((uri, key) => <Url key={key} uri={uri} />));
       setUrlsCount(urlsData.length);
     }
   };
-
-  // Warning rendering state reset
-  useEffect(() => {
-    setWarning(null);
-  }, [urls]);
 
   // Create new txt export file using dataExport state
   const handleDownloadTxt = () => {
@@ -69,32 +66,30 @@ function App() {
         <div className="row">
           <div className="col">
             <Form handleUrls={handleUrls} />
-            <div className="my-5">
-              {urlsCount && (
-                <Message type="success">
-                  {urlsCount > 1
-                    ? `${urlsCount} urls found`
-                    : `${urlsCount} url found`}
-                </Message>
+            <div className="my-3">
+              {warning && <Message type="warning">{warning}</Message>}
+              {urls && (
+                <div className="pb-5">
+                  <Message type="success">
+                    {urlsCount > 1
+                      ? `${urlsCount} urls found`
+                      : `${urlsCount} url found`}
+                  </Message>
+                  {urls}
+                  <hr />
+                  <div className="download">
+                    <DownloadBtn
+                      handleDownload={handleDownloadTxt}
+                      text="Export .txt"
+                    />{" "}
+                    <DownloadBtn
+                      handleDownload={handleDownloadMd}
+                      text="Export .md"
+                    />
+                  </div>
+                </div>
               )}
             </div>
-            {warning && <Message type="warning">{warning}</Message>}
-            {urls && (
-              <div className="pb-5">
-                {urls}
-                <hr />
-                <div className="download">
-                  <DownloadBtn
-                    handleDownload={handleDownloadTxt}
-                    text="Export .txt"
-                  />{" "}
-                  <DownloadBtn
-                    handleDownload={handleDownloadMd}
-                    text="Export .md"
-                  />
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
