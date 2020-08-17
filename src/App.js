@@ -18,12 +18,12 @@ function App() {
     let urlsData = extractUrls(text);
     if (typeof urlsData === "undefined" || urlsData.length === 0) {
       setWarning(`Last given string doesn't contain any Url!`);
-      setUrls(null); //cleaning previous render
+      setUrls(null); //cleaning previous rendered content
     } else {
-      setWarning(false); //cleaning previous render
-      setDataExport(urlsData);
+      setWarning(false); //cleaning previous rendered content
+      setDataExport(urlsData); // setting data for export
       setUrls(urlsData.map((uri, key) => <Url key={key} uri={uri} />));
-      setUrlsCount(urlsData.length);
+      setUrlsCount(urlsData.length); //setting count value
     }
   };
 

@@ -6,7 +6,7 @@ export default (form) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     form.handleUrls(text);
-    setText("");
+    setText(""); //reset input after handling
   };
 
   return (
@@ -16,6 +16,7 @@ export default (form) => {
           <textarea
             className="form-control mb-3"
             rows="7"
+            required
             placeholder="paste text here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
