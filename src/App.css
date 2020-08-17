@@ -6,6 +6,7 @@
   text-align: right;
   margin-right: 1vw;
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -27,4 +28,8 @@ footer {
   align-items: center;
   text-align: center;
   border-top: 1px solid #eaeaea;
+}
+
+.download {
+  text-align: right;
 }
