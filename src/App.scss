@@ -1,0 +1,65 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.main {
+  &--light {
+    background-color: #fff;
+  }
+  &--dark {
+    background-color: #4d4d4e;
+    textarea,
+    textarea:focus {
+      background-color: #626263;
+      border-color: #444446;
+      color: #fff;
+    }
+    ::placeholder {
+      color: rgb(223, 223, 223);
+    }
+  }
+}
+
+.jumbotron {
+  &--light {
+    background-color: #f1f3f5;
+    color: #212529;
+  }
+  &--dark {
+    background-color: #444446;
+    color: #f1f3f5;
+  }
+}
+.content {
+  flex: 1; /*this is the property flex-grow that makes the div flexible*/
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+
+  &--light {
+    background-color: #f8f9fa;
+  }
+  &--dark {
+    background-color: #3e3e3e;
+    border-color: #000000;
+    a {
+      color: #eaeaea;
+    }
+  }
+}
+
+.download {
+  text-align: right;
+}

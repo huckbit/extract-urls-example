@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import extractUrls from "extract-urls";
-import "./App.css";
-import Nabar from "./components/Navbar";
+import "./App.scss";
+import { ThemeContext } from "./context/themeContext";
+import Nabar from "./components/Navbar/Navbar";
 import Form from "./components/Form";
 import Url from "./components/Url";
 import Message from "./components/Message";
@@ -9,6 +10,7 @@ import Footer from "./components/Footer";
 import DownloadBtn from "./components/DownloadBtn";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
   const [urls, setUrls] = useState(null);
   const [dataExport, setDataExport] = useState(null);
   const [warning, setWarning] = useState(null);
@@ -48,17 +50,15 @@ function App() {
   };
 
   return (
-    <main>
+    <main className={`main--${theme}`}>
       <Nabar />
-      <div className="jumbotron jumbotron-fluid">
+      <div className={`jumbotron jumbotron-fluid jumbotron--${theme}`}>
         <div className="container">
           <h1 className="display-4">extract-urls</h1>
           <p className="lead">
             {" "}
-            Extract urls from a given string. Recognise both{" "}
-            <span className="badge badge-primary">https</span>{" "}
-            <span className="badge badge-primary">http</span> and returns a
-            lower case list of urls.
+            Extract urls from a given string. Recognise both <span className="badge badge-primary">https</span>{" "}
+            <span className="badge badge-primary">http</span> and returns a lower case list of urls.
           </p>
         </div>
       </div>
@@ -71,21 +71,13 @@ function App() {
               {urls && (
                 <div className="pb-5">
                   <Message type="success">
-                    {urlsCount > 1
-                      ? `${urlsCount} urls found`
-                      : `${urlsCount} url found`}
+                    {urlsCount > 1 ? `${urlsCount} urls found` : `${urlsCount} url found`}
                   </Message>
                   {urls}
                   <hr />
                   <div className="download">
-                    <DownloadBtn
-                      handleDownload={handleDownloadTxt}
-                      text="Export .txt"
-                    />{" "}
-                    <DownloadBtn
-                      handleDownload={handleDownloadMd}
-                      text="Export .md"
-                    />
+                    <DownloadBtn handleDownload={handleDownloadTxt} text="Export .txt" />{" "}
+                    <DownloadBtn handleDownload={handleDownloadMd} text="Export .md" />
                   </div>
                 </div>
               )}

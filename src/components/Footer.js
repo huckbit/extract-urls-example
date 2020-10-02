@@ -1,8 +1,11 @@
 import GitHubButton from "react-github-btn";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
+
 export default () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <footer className="bg-light">
+    <footer className={`footer--${theme}`}>
       <div className="container">
         <p
           style={{
@@ -11,12 +14,7 @@ export default () => {
             marginBottom: "7px",
           }}
         >
-          <a
-            style={{ verticalAlign: "top", color: "#1d1b1ba8" }}
-            href="https://github.com/huckbit"
-          >
-            © huckbit {new Date().getFullYear()}{" "}
-          </a>
+          <a href="https://github.com/huckbit">© huckbit {new Date().getFullYear()} </a>
         </p>
         <p>
           <GitHubButton

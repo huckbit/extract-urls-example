@@ -1,0 +1,46 @@
+.navbar,
+.jumbotron-fluid {
+  width: 100vw;
+}
+
+.btn {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.nav-bg {
+  &--light {
+    background-color: #007bff !important;
+  }
+  &--dark {
+    background-color: #3e3e3e !important;
+  }
+}
+.navbar-brand {
+  &--light {
+    color: #fff;
+  }
+  &--dark {
+    color: #fff;
+  }
+}
+.nav-link {
+  text-align: right;
+  margin-right: 1vw;
+  &--light {
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+  &--dark {
+    color: rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
