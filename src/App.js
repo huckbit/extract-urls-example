@@ -57,8 +57,8 @@ function App() {
           <h1 className="display-4">extract-urls</h1>
           <p className="lead">
             {" "}
-            Extract urls from a given string. Recognise both <span className="badge badge-primary">https</span>{" "}
-            <span className="badge badge-primary">http</span> and returns a lower case list of urls.
+            Extract urls from a given string. Recognise both <span className={`badge badge--${theme}`}>https</span>{" "}
+            <span className={`badge badge--${theme}`}>http</span> and returns a lower case list of urls.
           </p>
         </div>
       </div>

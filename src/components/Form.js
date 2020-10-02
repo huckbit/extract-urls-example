@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
 export default (form) => {
+  const { theme } = useContext(ThemeContext);
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
@@ -22,7 +24,7 @@ export default (form) => {
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={`btn btn--${theme}`}>
           Get Urls
         </button>
       </form>
