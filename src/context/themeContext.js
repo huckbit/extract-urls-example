@@ -2,15 +2,9 @@ import React, { useState, useEffect } from "react";
 const ThemeContext = React.createContext();
 
 function ThemeContextProvider(props) {
-  const [theme, setTheme] = useState("");
+  const localThemeSetting = window.localStorage.getItem("theme") || "light";
+  const [theme, setTheme] = useState(localThemeSetting);
 
-  //first execution gets value from localStorage if doesn't exists set to light
-  useEffect(() => {
-    const localTheme = localStorage.getItem("theme");
-    localTheme ? setTheme(localTheme) : setTheme("light");
-  }, []);
-
-  //store value in localstorage when theme changes
   useEffect(() => {
     localStorage.setItem("theme", theme);
   }, [theme]);
