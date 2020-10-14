@@ -47,7 +47,11 @@ export default () => {
               </a>
             </li>
             <li className="nav-item">
-              <button className={`btn nav-link nav-link--${theme}`} onClick={toggleTheme}>
+              <button
+                className={`btn nav-link nav-link--${theme}`}
+                style={{ marginLeft: "auto" }}
+                onClick={toggleTheme}
+              >
                 <i className="fas fa-adjust"></i>
               </button>
             </li>
