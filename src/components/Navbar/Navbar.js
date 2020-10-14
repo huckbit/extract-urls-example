@@ -12,7 +12,7 @@ export default () => {
   return (
     <>
       {/* <nav className="navbar navbar-expand-lg navbar-dark" > */}
-      <nav className={`navbar navbar-expand-lg nav-bg--${theme}`}>
+      <nav className={`navbar navbar-expand-lg nav-bg--${theme} navbar-${theme}`}>
         <a className={`navbar-brand--${theme}`} href="/">
           <i className="fas fa-link"></i> extract-urls
         </a>

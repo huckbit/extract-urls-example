@@ -5,7 +5,7 @@
 
 .nav-bg {
   &--light {
-    background-color: #007bff !important;
+    background-color: #6db3ffb5 !important;
   }
   &--dark {
     background-color: #272727 !important;
@@ -13,10 +13,18 @@
 }
 .navbar-brand {
   &--light {
-    color: #fff;
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
   &--dark {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.5);
+    &:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75);
+    }
   }
 }
 .nav-link {
