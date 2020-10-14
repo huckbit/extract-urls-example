@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import extractUrls from "extract-urls";
-import "./App.scss";
+import "./sass/App.scss";
+import "./sass/theme.scss";
 import { ThemeContext } from "./context/themeContext";
 import Nabar from "./components/Navbar/Navbar";
 import Form from "./components/Form";

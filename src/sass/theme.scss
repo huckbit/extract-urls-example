@@ -1,0 +1,147 @@
+.main {
+  &--light {
+    background-color: #fff;
+  }
+  &--dark {
+    background-color: #4d4d4e;
+    textarea,
+    textarea:focus {
+      background-color: #626263;
+      border-color: #444446;
+      color: #fff;
+    }
+    ::placeholder {
+      color: rgb(223, 223, 223);
+    }
+  }
+}
+
+.nav-bg {
+  &--light {
+    background-color: #6db3ffb5 !important;
+  }
+  &--dark {
+    background-color: #272727 !important;
+  }
+}
+.navbar-brand {
+  &--light {
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  &--dark {
+    color: rgba(255, 255, 255, 0.5);
+    &:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+.nav-link {
+  text-align: right;
+  margin-right: 1vw;
+  &--light {
+    color: rgba(109, 179, 255, 1);
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgba(109, 179, 255, 0.71);
+    }
+  }
+  &--dark {
+    color: rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.badge {
+  &--light {
+    background-color: #6db3ffb5;
+    color: #000000;
+  }
+  &--dark {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+.btn {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &--light {
+    background-color: #6db3ffb5;
+    color: rgba(39, 39, 39, 1);
+    &:hover {
+      color: rgba(39, 39, 39, 0.5);
+    }
+  }
+  &--dark {
+    background-color: #ffffff;
+    color: rgba(39, 39, 39, 1);
+    &:hover {
+      color: rgba(39, 39, 39, 0.5);
+    }
+  }
+}
+
+.jumbotron {
+  &--light {
+    background-color: #f1f3f5;
+    color: #212529;
+  }
+  &--dark {
+    background-color: #444446;
+    color: #f1f3f5;
+  }
+}
+
+.footer {
+  &--light {
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+    a {
+      color: rgba(27, 25, 25, 0.6);
+      &:hover {
+        text-decoration: none;
+        color: rgba(27, 25, 25, 1);
+      }
+    }
+  }
+  &--dark {
+    background-color: #272727;
+    border-color: #000000;
+    a {
+      color: rgba(234, 234, 234, 1);
+      &:hover {
+        text-decoration: none;
+        color: rgba(234, 234, 234, 0.5);
+      }
+    }
+  }
+}
+
+link {
+  &--light {
+    color: #007bff;
+    text-decoration: none;
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  }
+  &--dark {
+    color: rgba(218, 218, 218, 0.5);
+    text-decoration: none;
+    &:hover {
+      color: rgba(218, 218, 218, 1);
+      text-decoration: underline;
+    }
+  }
+}

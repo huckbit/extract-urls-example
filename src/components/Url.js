@@ -6,7 +6,7 @@ export default (url) => {
 
   return (
     <div>
-      <a className={`link--${theme}`} href={url.uri} target="_blank" rel="noopener noreferrer">
+      <a className={`nav-link--${theme}`} href={url.uri} target="_blank" rel="noopener noreferrer">
         {url.uri}
       </a>
     </div>

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
-import "./navbar.scss";
 
 export default () => {
   const [navbarOpened, setNavbarOpened] = useState(false);
