@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
+
 export default (url) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div>
-      <a href={url.uri} target="_blank" rel="noopener noreferrer">
+      <a className={`link--${theme}`} href={url.uri} target="_blank" rel="noopener noreferrer">
         {url.uri}
       </a>
     </div>

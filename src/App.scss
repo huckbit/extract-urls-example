@@ -24,6 +24,24 @@ main {
   }
 }
 
+link {
+  &--light {
+    color: #007bff;
+    text-decoration: none;
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  }
+  &--dark {
+    color: rgba(218, 218, 218, 0.5);
+    text-decoration: none;
+    &:hover {
+      color: rgba(218, 218, 218, 1);
+      text-decoration: underline;
+    }
+  }
+}
 .btn {
   &:focus {
     outline: none;
